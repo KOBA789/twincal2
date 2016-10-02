@@ -53,8 +53,8 @@ begin
         parse_jigen(jigen_ss).each do |jigen|
 
           date = get_term_start_each_wday(Date.parse(term[:begin]))[jigen[:wday]]
-          s[:start] = Time.parse(date + " " + P_START[jigen[:start] - 1]).to_icsf
-          s[:end]   = Time.parse(date + " " + P_END[jigen[:end] - 1]).to_icsf
+          s[:start] = Time.parse(date + " " + P_START[jigen[:start] - 1].to_s).to_icsf
+          s[:end]   = Time.parse(date + " " + P_END[jigen[:end] - 1].to_s).to_icsf
 
           s[:wday]  = jigen[:wday]
           # 繰り返しの終了日
